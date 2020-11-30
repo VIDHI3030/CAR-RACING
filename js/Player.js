@@ -34,4 +34,12 @@ class Player {
       allPlayers = data.val();
     })
   }
+  getcarsatend(){
+    database.ref("carsatend").on("value",(data)=>{
+      this.rank=data.val()
+    })
+  }
+  static updatecarsend(rank){
+    database.ref('/').update({carsatend:rank})
+  }
 }

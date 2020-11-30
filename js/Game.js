@@ -44,7 +44,7 @@ class Game {
     form.hide();
 
     Player.getPlayerInfo();
-    
+    player.getcarsatend();
     if(allPlayers !== undefined){
       //var display_position = 100;
       background (ground);
@@ -89,11 +89,15 @@ class Game {
     if(player.distance==displayHeight*5-100){
       gameState=2;
       player.distance=displayHeight*5;
+      player.rank+=1;
       player.update();
+      Player.updatecarsend(player.rank);
+      
     }
     drawSprites();
   }
   end(){
     this.update(2);
+    console.log(player.rank);
   }
 }
